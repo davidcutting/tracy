@@ -3,7 +3,7 @@
 #include <sstream>
 #include <stdio.h>
 
-#include <capstone.h>
+#include <capstone/capstone.h>
 
 #include "imgui.h"
 #include "TracyCharUtil.hpp"
@@ -17,7 +17,7 @@
 #include "TracyUtility.hpp"
 #include "TracyView.hpp"
 #include "TracyWorker.hpp"
-#include "tracy_pdqsort.h"
+#include "pdqsort.h"
 
 #include "IconsFontAwesome6.h"
 

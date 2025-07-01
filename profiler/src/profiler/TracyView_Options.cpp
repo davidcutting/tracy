@@ -8,7 +8,7 @@
 #include "TracyTimelineItemGpu.hpp"
 #include "TracyUtility.hpp"
 #include "TracyView.hpp"
-#include "tracy_pdqsort.h"
+#include "pdqsort.h"
 
 namespace tracy
 {

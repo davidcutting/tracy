@@ -12,10 +12,8 @@
 #include <zstd.h>
 
 #ifdef _MSC_VER
-#  define stat64 _stat64
-#endif
-#if defined __APPLE__
-#  define stat64 stat
+#  include <sys/types.h> /* required by _stat64 */
+#  define stat _stat64
 #endif
 
 #include "json.hpp"
@@ -70,8 +68,8 @@ int main( int argc, char** argv )
             fprintf( stderr, "Cannot open input file!\n" );
             exit( 1 );
         }
-        struct stat64 sb;
-        if( stat64( input, &sb ) != 0 )
+        struct stat sb;
+        if( stat( input, &sb ) != 0 )
         {
             fprintf( stderr, "Cannot open input file!\n" );
             fclose( f );
