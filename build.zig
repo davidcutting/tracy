@@ -140,7 +140,7 @@ pub fn build(b: *std.Build) !void {
     const use_wayland = target.result.os.tag == .linux and !legacy;
 
     const ini = createIni(b, common_module_options);
-    const imgui = createImgui(b, common_module_options, legacy, link_system_glfw, link_system_freetype);
+    const imgui = createImgui(b, common_module_options, link_system_glfw, link_system_freetype);
     const zstd = if (link_system_zstd) null else if (b.lazyDependency("zstd", .{
         .target = target,
         .optimize = optimize,
@@ -444,8 +444,6 @@ pub fn build(b: *std.Build) !void {
             if (b.lazyDependency("glfw", .{
                 .target = target,
                 .optimize = optimize,
-                .x11 = legacy,
-                .wayland = true,
             })) |glfw_dependency| {
                 tracy_profiler.root_module.linkLibrary(glfw_dependency.artifact("glfw"));
             }
@@ -807,7 +805,6 @@ fn createRpcmalloc(b: *std.Build, options: std.Build.Module.CreateOptions) *std.
 fn createImgui(
     b: *std.Build,
     options: std.Build.Module.CreateOptions,
-    legacy: bool,
     link_system_glfw: bool,
     link_system_freetype: bool,
 ) *std.Build.Step.Compile {
@@ -842,8 +839,6 @@ fn createImgui(
         if (b.lazyDependency("glfw", .{
             .target = options.target.?,
             .optimize = options.optimize.?,
-            .x11 = legacy,
-            .wayland = true,
         })) |glfw_dependency| {
             imgui.root_module.linkLibrary(glfw_dependency.artifact("glfw"));
         }
