@@ -28,7 +28,7 @@
 
     // Tracks the earliest Zig version that the package considers to be a
     // supported use case.
-    .minimum_zig_version = "0.14.0",
+    .minimum_zig_version = "0.15.1",
 
     // This field is optional.
     // Each dependency must either provide a `url` and `hash`, or a `path`.
@@ -70,8 +70,8 @@
             .hash = "N-V-__8AACbncwDdHLMz3EkS8iDHirtmHehU_FWTuKnmd9ik",
         },
         .glfw = .{ // A fork of GLFW packaged for the Zig build system
-            .url = "git+https://github.com/FalsePattern/glfw.git#5bab509c4e34b94c18a1504c95d7e9ce5cb2d05a",
-            .hash = "glfw_c-3.4.0-_9LYGAqqGQCrRETIkV6i6xZK-JPXkGp0lUkPadI2flTL",
+            .url = "git+https://github.com/davidcutting/glfw.git#29c166ffbe3a61dc106dfdb6518e394044b479c3",
+            .hash = "glfw-0.0.0-R5AeUkgSGgChp06K-xSKfIP8_GD-vOMs_bLVwWmMIV9b",
             .lazy = true,
         },
         .capstone = .{ // Availability for capstone as Zig dependency
@@ -111,8 +111,8 @@
         //     .lazy = true,
         // },
         .wayland = .{
-            .url = "git+https://github.com/allyourcodebase/wayland.git#381e053169a01ef33f16ceb18f4e7776ea4f72f3",
-            .hash = "wayland-1.24.0-dxEBa1RlAADfFhaFgVOxvHQq8-NMmGS8ASz2vnDj_7Bx",
+            .url = "git+https://github.com/allyourcodebase/wayland.git#0a3c8f33fcdecb5a055b68b12630028e63c7ee50",
+            .hash = "wayland-1.24.0-1-dxEBa4hlAAB6_gqwuj-ZygpudviFcuL_bOMBWvnsZzos",
             .lazy = true,
         },
         .wayland_protocols = .{
@@ -121,8 +121,8 @@
             .lazy = true,
         },
         .libxkbcommon = .{
-            .url = "git+https://github.com/allyourcodebase/libxkbcommon.git?ref=1.9.2#3eebf014dea884a3ea6968dccf5651f423647257",
-            .hash = "libxkbcommon-1.9.2-93LaF-tRAgDYZON1GVWNUvTazOR9b2E8KEqXx2rEoKV5",
+            .url = "git+https://github.com/allyourcodebase/libxkbcommon.git#4b9cf4d6a1411aa471d25cd0498b288857e377fd",
+            .hash = "libxkbcommon-1.11.0-93LaF6pwAgCZ0MlbC6OUufCvH5X3AktLv6sIVRrG2nRj",
             .lazy = true,
         },
 
